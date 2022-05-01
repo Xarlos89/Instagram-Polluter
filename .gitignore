@@ -6,3 +6,5 @@ geckodriver
 .DS_Store
 secret.py
 geckodriver.log
+secret.py
+*.pyc
