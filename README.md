@@ -4,7 +4,7 @@
  Take back your data, and remove a large part of your online prescence. 
 
  ## Requirements
- - OSX/Linux (ToDo)
+ - ~~OSX/Linux (ToDo)~~
  - Firefox Geckodirver (https://github.com/mozilla/geckodriver/releases)
  - An Instagram account with accessable Email tied to it
 
@@ -22,7 +22,6 @@
 
 ## Roadmap
 ### Development
-- requirements.txt
 - Simple GUI
 
 ### Data Archiving
@@ -44,6 +43,17 @@
 ### Account Removal
 - Delete profile
 - Delete Account
+
+
+## Change log
+
+#### April 30, 2022
+- Inital upload
+
+#### May 1, 2022
+- Added support for Windows systems in Utilities.py
+- Delete all pictures functionality now works beautifully.
+
 
 
 

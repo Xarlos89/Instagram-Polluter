@@ -1,6 +1,8 @@
-adamseyes_20220430
-Instagram Pictures
+adamseyes_20220430/
+Instagram/
+__pycache__/
+Instagram Pictures/
 geckodriver
 .DS_Store
-Instagram/
 secret.py
+geckodriver.log

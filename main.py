@@ -43,6 +43,7 @@ def menu():
             else: 
                 menu()
         elif selection == '3':
+            print("Feature does not exist yet!")
             os.system('clear')
             
         elif selection == '4':
@@ -115,32 +116,27 @@ def downloadPictures():
         menu()
 
 def deletePictures():
-    try:
-        webdriver.get('https://www.instagram.com/' + secret.username)
-        # Click first image
-        WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/section/main/div/div[2]/article/div[1]/div/div[1]/div[1]/a/div/div[1]'))).click()
-        
-        # Click '3 dots' to get the options dropdown
-        WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[6]/div[3]/div/article/div/div[2]/div/div/div[1]/div/div/button/div/div'))).click()
-
-        # Click Delete
-        WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[7]/div/div/div/div/button[1]'))).click()
-
-        # Confirm the deletion
-        WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[7]/div/div/div/div[2]/button[1]'))).click()
-
-    except NoSuchElementException:
-        print('Congratulations. All photos have been removed.')
-        confirm = input('\nPress any key to continue...')
-        return False
-
-
-
-
-
-
-
-
+    counter = 1
+    while True:
+        try:
+            webdriver.get('https://www.instagram.com/' + secret.username)
+            # Click first image
+            sleep(3)
+            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/section/main/div/div[2]/article/div[1]/div/div[1]/div[1]'))).click()
+            sleep(1)
+            # Click '3 dots' to get the options dropdown
+            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[6]/div[3]/div/article/div/div[2]/div/div/div[1]/div/div/button/div/div'))).click()
+            sleep(1)
+            # Click Delete
+            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[7]/div/div/div/div/button[1]'))).click()
+            sleep(1)
+            # Confirm the deletion
+            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[7]/div/div/div/div[2]/button[1]'))).click()
+            counter += 1
+        except NoSuchElementException:
+            print('Congratulations. {} Photos have been removed.'.format(str(counter)))
+            confirm = input('\nPress any key to continue...')
+            return False
 
 if __name__ == "__main__":
     menus.prettyIntro()
