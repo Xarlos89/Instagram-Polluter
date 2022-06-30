@@ -129,16 +129,16 @@ def deletePictures():
             webdriver.get('https://www.instagram.com/' + secret.username)
             # Click first image
             sleep(3)
-            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/section/main/div/div[2]/article/div[1]/div/div[1]/div[1]'))).click()
+            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div[1]/div/div[1]/div/div/div[1]/div[1]/section/main/div/div[3]/article/div[1]/div/div[1]/div[1]'))).click()
             sleep(1)
             # Click '3 dots' to get the options dropdown
-            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[6]/div[3]/div/article/div/div[2]/div/div/div[1]/div/div/button/div/div'))).click()
+            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[1]/div/div/button'))).click()
             sleep(1)
             # Click Delete
-            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[7]/div/div/div/div/button[1]'))).click()
+            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div/button[1]'))).click()
             sleep(1)
             # Confirm the deletion
-            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[7]/div/div/div/div[2]/button[1]'))).click()
+            WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[2]/button[1]'))).click()
             counter += 1
         except NoSuchElementException:
             print('Congratulations. {} Photos have been removed.'.format(str(counter)))
