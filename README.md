@@ -11,6 +11,7 @@
  ## Quickstart
  - Clone repository
  - Enter login information within secret.py
+ - Run main.py
 
  ## Current Features
  - Log in
